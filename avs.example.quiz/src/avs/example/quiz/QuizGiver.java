@@ -36,7 +36,7 @@ public class QuizGiver {
 	}
 	
 	public boolean isCorrectAnswer(int index) {
-		if( index == currentQuizIndex ) {
+		if( index == currentQuiz().getAnswerIndex() ) {
 			return true;
 		} else {
 			return false;

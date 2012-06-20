@@ -17,10 +17,12 @@ public class Dao {
 	private Quiz loadQuiz(String line) {
 		String[] data = COMMA.split(unescapeJava(unescapeCsv(line)));
 		
+		System.out.println(Integer.parseInt(data[Quiz.CHOICE_NUM + 1]));
+		
 		return new Quiz(
 				data[0],
 				Arrays.copyOfRange(data, 1, Quiz.CHOICE_NUM + 1),
-				Integer.parseInt(data[Quiz.CHOICE_NUM + 1]));
+				Integer.parseInt(data[Quiz.CHOICE_NUM + 1]) - 1);
 	}
 	
 	public void loadQuizes(File file, QuizGiver quizGiver) throws IOException {
